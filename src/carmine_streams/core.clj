@@ -138,7 +138,7 @@
                     (recur nil))
 
                 kvs
-                (let [v (try (let [v (f (kvs->map kvs))]
+                (let [v (try (let [v (f id kvs)]
                                (car/wcar conn-opts (car/xack stream group id))
                                v)
                              (catch Throwable t
